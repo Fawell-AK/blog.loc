@@ -37,11 +37,15 @@
             <a class="brand" href="?">Fawell's first blog</a>
             <div class="nav-collapse collapse">
                 <ul class="nav">
-                    <li class="active"><a href="#">Add news</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                    <li class="active"><a href="?">Home</a></li>
+                    <?php if (IS_ADMIN): ?>
+                        <li><a href="?act=logout">Admin (Logout)</a></li>
+                    <?php else: ?>
+                        <li><a href="?act=login">Login</a></li>
+                    <?php endif ?>
+
                 </ul>
-            </div><!--/.nav-collapse -->
+            </div>
         </div>
     </div>
 </div>

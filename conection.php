@@ -1,17 +1,19 @@
 <?php
 
-    $servername = "localhost";
+$servername = "localhost";
 
-    $username = "my_db";
+$username = "my_db";
 
-    $password = "admin123";
+$mysqli->set_charset('UTF8');
 
-        $conn = new mysqli($servername, $username, $password);
+$password = "admin123";
 
-            if ($conn->connect_error) {
+$conn = new mysqli($servername, $username, $password);
 
-                die("Connection failed: " . $conn->connect_error);
-            }
-            echo "Connected successfully";
+if ($conn->connect_error) {
+
+    die("Connection failed: " . $conn->connect_error);
+}
+echo "Connected successfully";
 
 ?>

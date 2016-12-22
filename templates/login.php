@@ -1,6 +1,6 @@
 <?php require('header.php') ?>
 
-<form action="?act=do=login" method="POST" class="well">
+<form action="?act=do-login" method="POST" class="well">
 
     <label>Login</label>
     <input name="login" type="text"/>
@@ -13,6 +13,5 @@
             Login
         </button>
     </div>
-
 
     <?php require('footer.php') ?>

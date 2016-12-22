@@ -16,7 +16,7 @@
         padding-left: 15px;
     }
 
-    .content {
+    .entry {
         padding-left: 20px;
     }
 
@@ -32,7 +32,7 @@
 <?php foreach ($records as $row): ?>
 
     <div class="entry">
-        <h3><a href="?act=view-entry&id=<? $row['id'] ?>"><?= $row['header'] ?></a></h3>
+        <h3><a href="?act=view-entry&id=<?= $row['id'] ?>"><?= $row['header'] ?></a></h3>
 
         <p class="content"><?= $row['content'] ?></p>
 
@@ -49,5 +49,27 @@
 
 
 <?php endforeach ?>
+
+<?php if (IS_ADMIN): ?>
+
+    <h1>Add new entry</h1>
+
+    <form action="?act=do-new-entry" method="POST" class="well">
+
+        <label>Author</label>
+        <input name="author" type="text"/>
+
+        <label>Header</label>
+        <input name="header" type="text"/>
+
+        <label>Content</label>
+        <textarea name="text"></textarea>
+        <div style="padding-top: 10px">
+            <button type="submit" class="btn">
+                Post
+            </button>
+        </div>
+    </form>
+<?php endif ?>
 
 <?php require('footer.php') ?>
